@@ -14,13 +14,11 @@ class CalculoIMC : Fragment() {
 
     private var binding: FragmentCalculoBinding? = null
 
-    private var pesoFinal: Double? = null
-    private var alturaFinal: Double? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        pesoFinal = arguments?.getDouble("$pesoFinal")
-        alturaFinal = arguments?.getDouble("$alturaFinal")
+
     }
 
     override fun onCreateView(

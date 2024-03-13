@@ -14,14 +14,18 @@ class ResultadoIMC : Fragment() {
 
     private var binding: FragmentResultadoBinding? = null
     private var pesoFinal: Double = 0.0
-    private val alturaFinal: Double = 0.0
+    private var alturaFinal: Double = 0.0
 
-    val bundle = arguments
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val pesoFinal = arguments?.getDouble("peso") ?: 0.0
-        val alturaFinal = arguments?.getDouble("altura") ?: 0.0
+        val bundle = arguments
+        if (bundle != null){
+            pesoFinal = bundle.getDouble("peso", 0.0)
+            alturaFinal = bundle.getDouble("altura", 0.0)
+        }
+
     }
     override fun onCreateView(
         inflater: LayoutInflater,
